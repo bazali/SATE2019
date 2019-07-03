@@ -1,0 +1,6 @@
+Our processing system consist of Processor corei5 with 8GM Ram.
+We use GVEdit tool to visulaize dot models and then save them in png format. 
+GVEdit takes too much time to draw models of large size dot models.
+We only draw the models for Set size of upto six enteries. However, we have 
+provided dot  models of large size (complex models with large states) which
+can be visulaized by some higher specs machine.
