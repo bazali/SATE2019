@@ -1,0 +1,209 @@
+MODULE main
+VAR state : {s0,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14};
+inp : {ofer0, ofer1, pol, size};
+out : {true, nul, 0, 1, 2, ful, 3, null, Queue};
+ASSIGN
+init(state) := s0;
+next(state) := case
+state = s0 & inp = ofer0: s1;
+state = s0 & inp = ofer1: s2;
+state = s0 & inp = pol: s0;
+state = s0 & inp = size: s0;
+state = s1 & inp = ofer0: s3;
+state = s1 & inp = ofer1: s7;
+state = s1 & inp = pol: s0;
+state = s1 & inp = size: s1;
+state = s2 & inp = ofer0: s4;
+state = s2 & inp = ofer1: s8;
+state = s2 & inp = pol: s0;
+state = s2 & inp = size: s2;
+state = s3 & inp = ofer0: s5;
+state = s3 & inp = ofer1: s12;
+state = s3 & inp = pol: s1;
+state = s3 & inp = size: s3;
+state = s4 & inp = ofer0: s6;
+state = s4 & inp = ofer1: s13;
+state = s4 & inp = pol: s1;
+state = s4 & inp = size: s4;
+state = s5 & inp = ofer0: s5;
+state = s5 & inp = ofer1: s5;
+state = s5 & inp = pol: s3;
+state = s5 & inp = size: s5;
+state = s6 & inp = ofer0: s6;
+state = s6 & inp = ofer1: s6;
+state = s6 & inp = pol: s3;
+state = s6 & inp = size: s6;
+state = s7 & inp = ofer0: s9;
+state = s7 & inp = ofer1: s14;
+state = s7 & inp = pol: s2;
+state = s7 & inp = size: s7;
+state = s8 & inp = ofer0: s10;
+state = s8 & inp = ofer1: s11;
+state = s8 & inp = pol: s2;
+state = s8 & inp = size: s8;
+state = s9 & inp = ofer0: s9;
+state = s9 & inp = ofer1: s9;
+state = s9 & inp = pol: s4;
+state = s9 & inp = size: s9;
+state = s10 & inp = ofer0: s10;
+state = s10 & inp = ofer1: s10;
+state = s10 & inp = pol: s4;
+state = s10 & inp = size: s10;
+state = s11 & inp = ofer0: s11;
+state = s11 & inp = ofer1: s11;
+state = s11 & inp = pol: s8;
+state = s11 & inp = size: s11;
+state = s12 & inp = ofer0: s12;
+state = s12 & inp = ofer1: s12;
+state = s12 & inp = pol: s7;
+state = s12 & inp = size: s12;
+state = s13 & inp = ofer0: s13;
+state = s13 & inp = ofer1: s13;
+state = s13 & inp = pol: s7;
+state = s13 & inp = size: s13;
+state = s14 & inp = ofer0: s14;
+state = s14 & inp = ofer1: s14;
+state = s14 & inp = pol: s8;
+state = s14 & inp = size: s14;
+esac;
+out := case
+state = s0 & inp = ofer0: true;
+state = s0 & inp = ofer1: true;
+state = s0 & inp = pol: nul;
+state = s0 & inp = size: 0;
+state = s1 & inp = ofer0: true;
+state = s1 & inp = ofer1: true;
+state = s1 & inp = pol: 0;
+state = s1 & inp = size: 1;
+state = s2 & inp = ofer0: true;
+state = s2 & inp = ofer1: true;
+state = s2 & inp = pol: 1;
+state = s2 & inp = size: 1;
+state = s3 & inp = ofer0: true;
+state = s3 & inp = ofer1: true;
+state = s3 & inp = pol: 0;
+state = s3 & inp = size: 2;
+state = s4 & inp = ofer0: true;
+state = s4 & inp = ofer1: true;
+state = s4 & inp = pol: 1;
+state = s4 & inp = size: 2;
+state = s5 & inp = ofer0: ful;
+state = s5 & inp = ofer1: ful;
+state = s5 & inp = pol: 0;
+state = s5 & inp = size: 3;
+state = s6 & inp = ofer0: ful;
+state = s6 & inp = ofer1: ful;
+state = s6 & inp = pol: 1;
+state = s6 & inp = size: 3;
+state = s7 & inp = ofer0: true;
+state = s7 & inp = ofer1: true;
+state = s7 & inp = pol: 0;
+state = s7 & inp = size: 2;
+state = s8 & inp = ofer0: true;
+state = s8 & inp = ofer1: true;
+state = s8 & inp = pol: 1;
+state = s8 & inp = size: 2;
+state = s9 & inp = ofer0: ful;
+state = s9 & inp = ofer1: ful;
+state = s9 & inp = pol: 0;
+state = s9 & inp = size: 3;
+state = s10 & inp = ofer0: ful;
+state = s10 & inp = ofer1: ful;
+state = s10 & inp = pol: 1;
+state = s10 & inp = size: 3;
+state = s11 & inp = ofer0: ful;
+state = s11 & inp = ofer1: ful;
+state = s11 & inp = pol: 1;
+state = s11 & inp = size: 3;
+state = s12 & inp = ofer0: ful;
+state = s12 & inp = ofer1: ful;
+state = s12 & inp = pol: 0;
+state = s12 & inp = size: 3;
+state = s13 & inp = ofer0: ful;
+state = s13 & inp = ofer1: ful;
+state = s13 & inp = pol: 1;
+state = s13 & inp = size: 3;
+state = s14 & inp = ofer0: ful;
+state = s14 & inp = ofer1: ful;
+state = s14 & inp = pol: 0;
+state = s14 & inp = size: 3;
+esac;
+--LTLSPEC Properties
+
+DEFINE Queue-Fixed-Size:= 3;
+DEFINE EmptyQueue:= (inp=size & out=0) | (inp=pol & out=null) | state=s0 & inp=ofer0 & out=0 | state=s0 & inp=ofer1 & out=1; 
+DEFINE FullQueue:= (inp=ofer0 & out=ful) | (inp=ofer1 & out=ful) | (inp=size & out=Queue-Fixed-Size);
+DEFINE Queue-Overflow:= Queue-Fixed-Size+1;
+DEFINE Queue-Underflow:= -1;
+
+
+--Liveness Properties.... "Something good will happen"  OR  "Some particular/or good situation eventually occur" Or "Desired behaviour is actually happening".
+	--Example-1: If "Input" then, eventually "Output".			G (Input -> F Output)
+	--Example-2: It "Started" hold then, eventually "Ready" also hold. 				G(Started -> F Ready)
+	--Example-3: If "write" is asserted forever and "read" is never asserted, then the FIFO eventually becomes Full. It think it is written as: G((write & ! read) -> F Full)
+	--Example-4: Every request will eventually lead to a response.  	G(request -> F response)	
+	--Example-5: If process-1 wants to enter its critical state, it eventually does".  	AG(process-1.state=entering  ->  AF process-1.state=critical)
+	--Example-6: For any state, if a "request" (of some source) occurs, then it will eventually be "acknowledged".   G(requested -> F acknowledged)
+	
+	--Example-7: F(x >5)    or   F (terminate)    or  F(rich)
+
+
+--inp : {ofer0, ofer1, pol, size};
+--out : {0, 1, null, 2, ful, 3, Queue, Of, QueueIsEmpty, QueueIsFul};
+
+	
+
+--P8: If "Offer" operation is done forever on a non-filled Queue and "poll" operation never done then the Queue eventually becomes "Full".
+		
+				--LTLSPEC NAME Liv_1_1 := G((!FullQueue & ((inp=ofer0|inp=ofer1&inp!=pol) U FullQueue)) -> X(inp=size -> out=3))														--True
+				
+				LTLSPEC NAME Liv_1_2 := G((!FullQueue & ((inp=ofer0|inp=ofer1) U FullQueue)) -> X(inp=size -> out=Queue-Fixed-Size))													--True
+				LTLSPEC NAME Liv_1_3 := G((!FullQueue & ((inp=ofer0|inp=ofer1) U FullQueue)) -> F(inp=size -> out=Queue-Fixed-Size))													--True
+				--LTLSPEC NAME Liv_1_4 := G((!FullQueue & ((inp=ofer0|inp=ofer1) U FullQueue)) -> X(inp=size -> out=Queue-Fixed-Size))													--True
+		
+				
+				CTLSPEC NAME Liv_1_5 := AG((!FullQueue & (inp=ofer0 | inp=ofer1) & inp!=pol) -> AF (out=true | out=ful))																--True
+				CTLSPEC NAME Liv_1_6 := AG(((inp=ofer0 | inp=ofer1) & inp!=pol) -> AF (out=true| out=ful))																				--True
+			
+
+			
+				LTLSPEC NAME Liv_1_7 := G((!EmptyQueue & (inp=ofer0 | inp=ofer1) U FullQueue) -> X (inp=size -> out=Queue-Fixed-Size))													--True
+				LTLSPEC NAME Liv_1_8 := G((!EmptyQueue & (inp=ofer0 | inp=ofer1) U FullQueue & inp!=pol) -> X(inp=size -> out=Queue-Fixed-Size))										--True	
+				CTLSPEC NAME Liv_1_9 := AG((!EmptyQueue & (inp=ofer0 | inp=ofer1) & inp!=pol) -> AF (out=true | out=ful))																--True		  
+		
+		
+	
+--P9: If "pol" operation is done forever on non-empty Queue and "Offer" operation never done then the Queue eventually becomes "Empty".	
+
+				
+				--LTLSPEC NAME Liv_2_1 := G(!FullQueue -> ((inp=pol U EmptyQueue) ->X(inp=size -> out=0)))																				--False	
+				
+				LTLSPEC NAME Liv_2_2 := G(!FullQueue -> ((inp=pol U EmptyQueue) ->(inp=size -> out=0)))																					--True					
+				LTLSPEC NAME Liv_2_3 := G(!FullQueue -> ((inp=pol U EmptyQueue) ->F(inp=size -> out=0)))																				--True	
+				
+				LTLSPEC NAME Liv_2_4 := G(!EmptyQueue -> (inp=pol U EmptyQueue) -> X(inp=size -> out=0))			   																	--True
+				LTLSPEC NAME Liv_2_5 := G(!EmptyQueue -> (inp=pol U EmptyQueue) -> F(inp=size -> out=0))			   																	--True
+				
+				LTLSPEC NAME Liv_2_6 := G(!EmptyQueue -> ((inp!=ofer0|inp!=ofer1)&inp=pol U EmptyQueue) -> X(inp=size -> out=0))			   											--True
+				
+						
+
+				
+				
+--P10(a): If "Offer" operation wants to write on the Queue, then it eventually did this successfully without "Overflow".
+				
+				CTLSPEC NAME Liv_3_1 := AG((!FullQueue & (inp=ofer0 | inp=ofer1)) -> AF (out!=Queue-Underflow | out!=Queue-Overflow))													--True				
+				CTLSPEC NAME Liv_3_2 := AG((inp=ofer0 | inp=ofer1) -> AF(out!=Queue-Overflow))																							--True	
+				
+		
+
+--P10(b): If "pol" operation wants to remove an element from the Queue, then it eventually did this successfully without "Underflow".
+
+				CTLSPEC NAME Liv_3_3 := AG(inp=pol -> AF(out!=Queue-Underflow))																											--True
+				CTLSPEC NAME Liv_3_4 := AG(!EmptyQueue & inp=pol -> AF(out!=Queue-Underflow))																							--True
+				
+				CTLSPEC NAME Liv_3_5 := AG((inp=ofer0 | inp=ofer1 | inp=pol) -> AF(out!=Queue-Overflow | out!=Queue-Underflow))															--True
+				
+				
+		
+		

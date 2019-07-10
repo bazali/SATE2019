@@ -1,0 +1,199 @@
+MODULE main
+VAR state : {s0,s1,s2,s3,s4,s5,s6,s7};
+inp : {add1, add2, add3, remov1, remov2, remov3, size};
+out : {Tru, empty, Fls, 0, 1, 3, 2, ful, Set};
+ASSIGN
+init(state) := s0;
+next(state) := case
+state = s0 & inp = add1: s1;
+state = s0 & inp = add2: s2;
+state = s0 & inp = add3: s3;
+state = s0 & inp = remov1: s0;
+state = s0 & inp = remov2: s0;
+state = s0 & inp = remov3: s0;
+state = s0 & inp = size: s0;
+state = s1 & inp = add1: s1;
+state = s1 & inp = add2: s4;
+state = s1 & inp = add3: s5;
+state = s1 & inp = remov1: s0;
+state = s1 & inp = remov2: s1;
+state = s1 & inp = remov3: s1;
+state = s1 & inp = size: s1;
+state = s2 & inp = add1: s4;
+state = s2 & inp = add2: s2;
+state = s2 & inp = add3: s6;
+state = s2 & inp = remov1: s2;
+state = s2 & inp = remov2: s0;
+state = s2 & inp = remov3: s2;
+state = s2 & inp = size: s2;
+state = s3 & inp = add1: s5;
+state = s3 & inp = add2: s6;
+state = s3 & inp = add3: s3;
+state = s3 & inp = remov1: s3;
+state = s3 & inp = remov2: s3;
+state = s3 & inp = remov3: s0;
+state = s3 & inp = size: s3;
+state = s4 & inp = add1: s4;
+state = s4 & inp = add2: s4;
+state = s4 & inp = add3: s7;
+state = s4 & inp = remov1: s2;
+state = s4 & inp = remov2: s1;
+state = s4 & inp = remov3: s4;
+state = s4 & inp = size: s4;
+state = s5 & inp = add1: s5;
+state = s5 & inp = add2: s7;
+state = s5 & inp = add3: s5;
+state = s5 & inp = remov1: s3;
+state = s5 & inp = remov2: s5;
+state = s5 & inp = remov3: s1;
+state = s5 & inp = size: s5;
+state = s6 & inp = add1: s7;
+state = s6 & inp = add2: s6;
+state = s6 & inp = add3: s6;
+state = s6 & inp = remov1: s6;
+state = s6 & inp = remov2: s3;
+state = s6 & inp = remov3: s2;
+state = s6 & inp = size: s6;
+state = s7 & inp = add1: s7;
+state = s7 & inp = add2: s7;
+state = s7 & inp = add3: s7;
+state = s7 & inp = remov1: s6;
+state = s7 & inp = remov2: s5;
+state = s7 & inp = remov3: s4;
+state = s7 & inp = size: s7;
+esac;
+out := case
+state = s0 & inp = add1: Tru;
+state = s0 & inp = add2: Tru;
+state = s0 & inp = add3: Tru;
+state = s0 & inp = remov1: empty;
+state = s0 & inp = remov2: empty;
+state = s0 & inp = remov3: Fls;
+state = s0 & inp = size: 0;
+state = s1 & inp = add1: Fls;
+state = s1 & inp = add2: Tru;
+state = s1 & inp = add3: Tru;
+state = s1 & inp = remov1: Tru;
+state = s1 & inp = remov2: Fls;
+state = s1 & inp = remov3: Fls;
+state = s1 & inp = size: 1;
+state = s2 & inp = add1: Tru;
+state = s2 & inp = add2: Fls;
+state = s2 & inp = add3: Tru;
+state = s2 & inp = remov1: Fls;
+state = s2 & inp = remov2: Tru;
+state = s2 & inp = remov3: Fls;
+state = s2 & inp = size: 1;
+state = s3 & inp = add1: Tru;
+state = s3 & inp = add2: Tru;
+state = s3 & inp = add3: Fls;
+state = s3 & inp = remov1: Fls;
+state = s3 & inp = remov2: Fls;
+state = s3 & inp = remov3: 3;
+state = s3 & inp = size: 1;
+state = s4 & inp = add1: Fls;
+state = s4 & inp = add2: Fls;
+state = s4 & inp = add3: Tru;
+state = s4 & inp = remov1: 1;
+state = s4 & inp = remov2: 2;
+state = s4 & inp = remov3: Fls;
+state = s4 & inp = size: 2;
+state = s5 & inp = add1: Fls;
+state = s5 & inp = add2: Tru;
+state = s5 & inp = add3: Fls;
+state = s5 & inp = remov1: 1;
+state = s5 & inp = remov2: Fls;
+state = s5 & inp = remov3: 3;
+state = s5 & inp = size: 2;
+state = s6 & inp = add1: Tru;
+state = s6 & inp = add2: Fls;
+state = s6 & inp = add3: Fls;
+state = s6 & inp = remov1: Fls;
+state = s6 & inp = remov2: 2;
+state = s6 & inp = remov3: 3;
+state = s6 & inp = size: 2;
+state = s7 & inp = add1: ful;
+state = s7 & inp = add2: ful;
+state = s7 & inp = add3: ful;
+state = s7 & inp = remov1: 1;
+state = s7 & inp = remov2: 2;
+state = s7 & inp = remov3: 3;
+state = s7 & inp = size: 3;
+esac;
+--LTLSPEC Properties
+
+--Liveness Properties.... "Something good will happen"  OR  "Some particular/or good situation eventually occur" Or "Desired behaviour is actually happening".
+	--Example-1: If "Input" then, eventually "Output".			G (Input -> F Output)
+	--Example-2: It "Started" hold then, eventually "Ready" also hold. 				G(Started -> F Ready)
+	--Example-3: If "write" is asserted forever and "read" is never asserted, then the FIFO eventually becomes Full. It think it is written as: G((write & ! read) -> F Full)
+	--Example-4: Every request will eventually lead to a response.  	G(request -> F response)	
+	--Example-5: If process-1 wants to enter its critical state, it eventually does".  	AG(process-1.state=entering  ->  AF process-1.state=critical)
+	--Example-6: For any state, if a "request" (of some source) occurs, then it will eventually be "acknowledged".   G(requested -> F acknowledged)
+	
+	--Example-7: F(x >5)    or   F (terminate)    or  F(rich)
+
+
+
+-- Set size is determined by "add operations" (e.g., for add1 and add2, set size will be 2).
+
+DEFINE Set-Fixed-Size:= 3;
+DEFINE EmptySet:= (inp=size & out=0) | (state=s0 & inp=remov1 & out=empty)|(state=s0 & inp=remov2 & out=empty) | (state=s0 & inp=add1 & out=Tru)| (state=s0 & inp=add2 & out=Tru) ; 
+DEFINE FullSet:= (inp=add1 & out=ful) | (inp=add2 & out=ful) | (inp=size & out=Set-Fixed-Size);
+DEFINE Set-Overflow:= Set-Fixed-Size+1;
+DEFINE Set-Underflow:= -1;
+
+
+	
+
+--P8: If "Add" operation is done forever on a non-filled Set and "Remove" operation never done then the Set eventually becomes "Full".
+		
+				--LTLSPEC NAME Liv_1_1 := G((!FullSet & ((inp=add1|inp=add2&inp!=remov1) U FullSet)) -> X(inp=size -> out=3))												--True
+				LTLSPEC NAME Liv_1_2 := G((!FullSet & ((inp=add1|inp=add2) U FullSet)) -> X(inp=size -> out=Set-Fixed-Size))												--True
+				LTLSPEC NAME Liv_1_3 := G((!FullSet & ((inp=add1|inp=add2) U FullSet)) -> F(inp=size -> out=Set-Fixed-Size))												--True
+				LTLSPEC NAME Liv_1_4 := G((!FullSet & ((inp=add1|inp=add2) U FullSet)) -> X(inp=size -> out=Set-Fixed-Size))												--True
+		
+				
+				--CTLSPEC NAME Liv_1_5 := AG((!FullSet & (inp=add1 | inp=add2) & inp!=remov1) -> AF (out=0 | out=1 | out=ful))												--True
+				--CTLSPEC NAME Liv_1_6 := AG(((inp=add1 | inp=add2) & inp!=remov1) -> AF (out=0 | out=1| out=ful))															--True
+			
+
+			
+				LTLSPEC NAME Liv_1_7 := G((!EmptySet & (inp=add1 | inp=add2) U FullSet) -> X (inp=size -> out=Set-Fixed-Size))												--True
+				LTLSPEC NAME Liv_1_8 := G((!EmptySet & (inp=add1 | inp=add2) U FullSet & inp!=remov1) -> X(inp=size -> out=Set-Fixed-Size))									--True	
+				--CTLSPEC NAME Liv_1_9 := AG((!EmptySet & (inp=add1 | inp=add2) & inp!=remov1) -> AF (out=0 | out=1 | out=ful))												--True		  
+		
+		
+	
+--P9: If "Remove" operation is done forever on non-empty Set and "Push" operation never done then the Set eventually becomes "Empty".	
+
+				
+				--LTLSPEC NAME Liv_2_1 := G(!FullSet -> ((inp=remov1 U EmptySet) ->X(inp=size -> out=0)))																	--False	
+				
+				LTLSPEC NAME Liv_2_2 := G(!FullSet -> (((inp=remov1|inp=remov2) U EmptySet) ->(inp=size -> out=0)))															--True					
+				LTLSPEC NAME Liv_2_3 := G(!FullSet -> (((inp=remov1|inp=remov2) U EmptySet) ->F(inp=size -> out=0)))														--True	
+				
+				LTLSPEC NAME Liv_2_4 := G(!EmptySet -> ((inp=remov1|inp=remov2) U EmptySet) -> X(inp=size -> out=0))			   											--True
+				LTLSPEC NAME Liv_2_5 := G(!EmptySet -> ((inp=remov1|inp=remov2) U EmptySet) -> F(inp=size -> out=0))			   											--True
+				
+				LTLSPEC NAME Liv_2_6 := G(!EmptySet -> ((inp!=add1|inp!=add2)&inp=remov1 U EmptySet) -> X(inp=size -> out=0))			   									--True
+				
+						
+
+				
+				
+--P10(a): If "Add" operation wants to write on the Set then it eventually did this successfully without "Overflow".
+				
+				CTLSPEC NAME Liv_3_1 := AG((!FullSet & (inp=add1 | inp=add2)) -> AF (out!=Set-Underflow | out!=Set-Overflow))												--True
+				CTLSPEC NAME Liv_3_2 := AG((inp=add1 | inp=add2) -> AF(out!=Set-Overflow))																					--True	
+		
+
+--P10(b): If "Remove" operation wants to remove an element from the Set, then it eventually did this successfully without "Underflow".
+
+				CTLSPEC NAME Liv_3_3 := AG(inp=remov1 -> AF(out!=Set-Underflow))																							--True
+				CTLSPEC NAME Liv_3_4 := AG(!EmptySet & inp=remov1 -> AF(out!=Set-Underflow))																				--True
+				
+				CTLSPEC NAME Liv_3_5 := AG((inp=add1 | inp=add2 | inp=remov1) -> AF(out!=Set-Overflow | out!=Set-Underflow))												--True
+				
+				
+		
+		

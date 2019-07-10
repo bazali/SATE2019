@@ -1,0 +1,592 @@
+MODULE main
+VAR state : {s0,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15,s16,s17,s18,s19,s20,s21,s22,s23,s24,s25,s26,s27,s28,s29,s30,s31,s32,s33,s34,s35,s36,s37,s38,s39,s40,s41,s42,s43,s44,s45,s46,s47,s48,s49,s50,s51,s52,s53,s54,s55,s56,s57,s58,s59,s60,s61,s62};
+inp : {pu0, pu1, pop, size};
+out : {0, 1, empty, 2, 3, 4, ful, 5, Stack};
+ASSIGN
+init(state) := s0;
+next(state) := case
+state = s0 & inp = pu0: s1;
+state = s0 & inp = pu1: s2;
+state = s0 & inp = pop: s0;
+state = s0 & inp = size: s0;
+state = s1 & inp = pu0: s3;
+state = s1 & inp = pu1: s4;
+state = s1 & inp = pop: s0;
+state = s1 & inp = size: s1;
+state = s2 & inp = pu0: s12;
+state = s2 & inp = pu1: s13;
+state = s2 & inp = pop: s0;
+state = s2 & inp = size: s2;
+state = s3 & inp = pu0: s5;
+state = s3 & inp = pu1: s6;
+state = s3 & inp = pop: s1;
+state = s3 & inp = size: s3;
+state = s4 & inp = pu0: s14;
+state = s4 & inp = pu1: s15;
+state = s4 & inp = pop: s1;
+state = s4 & inp = size: s4;
+state = s5 & inp = pu0: s7;
+state = s5 & inp = pu1: s8;
+state = s5 & inp = pop: s3;
+state = s5 & inp = size: s5;
+state = s6 & inp = pu0: s16;
+state = s6 & inp = pu1: s17;
+state = s6 & inp = pop: s3;
+state = s6 & inp = size: s6;
+state = s7 & inp = pu0: s9;
+state = s7 & inp = pu1: s10;
+state = s7 & inp = pop: s5;
+state = s7 & inp = size: s7;
+state = s8 & inp = pu0: s11;
+state = s8 & inp = pu1: s18;
+state = s8 & inp = pop: s5;
+state = s8 & inp = size: s8;
+state = s9 & inp = pu0: s9;
+state = s9 & inp = pu1: s9;
+state = s9 & inp = pop: s7;
+state = s9 & inp = size: s9;
+state = s10 & inp = pu0: s10;
+state = s10 & inp = pu1: s10;
+state = s10 & inp = pop: s7;
+state = s10 & inp = size: s10;
+state = s11 & inp = pu0: s11;
+state = s11 & inp = pu1: s11;
+state = s11 & inp = pop: s8;
+state = s11 & inp = size: s11;
+state = s12 & inp = pu0: s20;
+state = s12 & inp = pu1: s21;
+state = s12 & inp = pop: s2;
+state = s12 & inp = size: s12;
+state = s13 & inp = pu0: s22;
+state = s13 & inp = pu1: s23;
+state = s13 & inp = pop: s2;
+state = s13 & inp = size: s13;
+state = s14 & inp = pu0: s19;
+state = s14 & inp = pu1: s24;
+state = s14 & inp = pop: s4;
+state = s14 & inp = size: s14;
+state = s15 & inp = pu0: s25;
+state = s15 & inp = pu1: s26;
+state = s15 & inp = pop: s4;
+state = s15 & inp = size: s15;
+state = s16 & inp = pu0: s27;
+state = s16 & inp = pu1: s28;
+state = s16 & inp = pop: s6;
+state = s16 & inp = size: s16;
+state = s17 & inp = pu0: s29;
+state = s17 & inp = pu1: s30;
+state = s17 & inp = pop: s6;
+state = s17 & inp = size: s17;
+state = s18 & inp = pu0: s18;
+state = s18 & inp = pu1: s18;
+state = s18 & inp = pop: s8;
+state = s18 & inp = size: s18;
+state = s19 & inp = pu0: s32;
+state = s19 & inp = pu1: s33;
+state = s19 & inp = pop: s14;
+state = s19 & inp = size: s19;
+state = s20 & inp = pu0: s34;
+state = s20 & inp = pu1: s35;
+state = s20 & inp = pop: s12;
+state = s20 & inp = size: s20;
+state = s21 & inp = pu0: s31;
+state = s21 & inp = pu1: s36;
+state = s21 & inp = pop: s12;
+state = s21 & inp = size: s21;
+state = s22 & inp = pu0: s37;
+state = s22 & inp = pu1: s38;
+state = s22 & inp = pop: s13;
+state = s22 & inp = size: s22;
+state = s23 & inp = pu0: s39;
+state = s23 & inp = pu1: s40;
+state = s23 & inp = pop: s13;
+state = s23 & inp = size: s23;
+state = s24 & inp = pu0: s41;
+state = s24 & inp = pu1: s42;
+state = s24 & inp = pop: s14;
+state = s24 & inp = size: s24;
+state = s25 & inp = pu0: s43;
+state = s25 & inp = pu1: s44;
+state = s25 & inp = pop: s15;
+state = s25 & inp = size: s25;
+state = s26 & inp = pu0: s45;
+state = s26 & inp = pu1: s46;
+state = s26 & inp = pop: s15;
+state = s26 & inp = size: s26;
+state = s27 & inp = pu0: s27;
+state = s27 & inp = pu1: s27;
+state = s27 & inp = pop: s16;
+state = s27 & inp = size: s27;
+state = s28 & inp = pu0: s28;
+state = s28 & inp = pu1: s28;
+state = s28 & inp = pop: s16;
+state = s28 & inp = size: s28;
+state = s29 & inp = pu0: s29;
+state = s29 & inp = pu1: s29;
+state = s29 & inp = pop: s17;
+state = s29 & inp = size: s29;
+state = s30 & inp = pu0: s30;
+state = s30 & inp = pu1: s30;
+state = s30 & inp = pop: s17;
+state = s30 & inp = size: s30;
+state = s31 & inp = pu0: s48;
+state = s31 & inp = pu1: s49;
+state = s31 & inp = pop: s21;
+state = s31 & inp = size: s31;
+state = s32 & inp = pu0: s32;
+state = s32 & inp = pu1: s32;
+state = s32 & inp = pop: s19;
+state = s32 & inp = size: s32;
+state = s33 & inp = pu0: s33;
+state = s33 & inp = pu1: s33;
+state = s33 & inp = pop: s19;
+state = s33 & inp = size: s33;
+state = s34 & inp = pu0: s50;
+state = s34 & inp = pu1: s51;
+state = s34 & inp = pop: s20;
+state = s34 & inp = size: s34;
+state = s35 & inp = pu0: s52;
+state = s35 & inp = pu1: s53;
+state = s35 & inp = pop: s20;
+state = s35 & inp = size: s35;
+state = s36 & inp = pu0: s54;
+state = s36 & inp = pu1: s55;
+state = s36 & inp = pop: s21;
+state = s36 & inp = size: s36;
+state = s37 & inp = pu0: s47;
+state = s37 & inp = pu1: s56;
+state = s37 & inp = pop: s22;
+state = s37 & inp = size: s37;
+state = s38 & inp = pu0: s57;
+state = s38 & inp = pu1: s58;
+state = s38 & inp = pop: s22;
+state = s38 & inp = size: s38;
+state = s39 & inp = pu0: s59;
+state = s39 & inp = pu1: s60;
+state = s39 & inp = pop: s23;
+state = s39 & inp = size: s39;
+state = s40 & inp = pu0: s61;
+state = s40 & inp = pu1: s62;
+state = s40 & inp = pop: s23;
+state = s40 & inp = size: s40;
+state = s41 & inp = pu0: s41;
+state = s41 & inp = pu1: s41;
+state = s41 & inp = pop: s24;
+state = s41 & inp = size: s41;
+state = s42 & inp = pu0: s42;
+state = s42 & inp = pu1: s42;
+state = s42 & inp = pop: s24;
+state = s42 & inp = size: s42;
+state = s43 & inp = pu0: s43;
+state = s43 & inp = pu1: s43;
+state = s43 & inp = pop: s25;
+state = s43 & inp = size: s43;
+state = s44 & inp = pu0: s44;
+state = s44 & inp = pu1: s44;
+state = s44 & inp = pop: s25;
+state = s44 & inp = size: s44;
+state = s45 & inp = pu0: s45;
+state = s45 & inp = pu1: s45;
+state = s45 & inp = pop: s26;
+state = s45 & inp = size: s45;
+state = s46 & inp = pu0: s46;
+state = s46 & inp = pu1: s46;
+state = s46 & inp = pop: s26;
+state = s46 & inp = size: s46;
+state = s47 & inp = pu0: s47;
+state = s47 & inp = pu1: s47;
+state = s47 & inp = pop: s37;
+state = s47 & inp = size: s47;
+state = s48 & inp = pu0: s48;
+state = s48 & inp = pu1: s48;
+state = s48 & inp = pop: s31;
+state = s48 & inp = size: s48;
+state = s49 & inp = pu0: s49;
+state = s49 & inp = pu1: s49;
+state = s49 & inp = pop: s31;
+state = s49 & inp = size: s49;
+state = s50 & inp = pu0: s50;
+state = s50 & inp = pu1: s50;
+state = s50 & inp = pop: s34;
+state = s50 & inp = size: s50;
+state = s51 & inp = pu0: s51;
+state = s51 & inp = pu1: s51;
+state = s51 & inp = pop: s34;
+state = s51 & inp = size: s51;
+state = s52 & inp = pu0: s52;
+state = s52 & inp = pu1: s52;
+state = s52 & inp = pop: s35;
+state = s52 & inp = size: s52;
+state = s53 & inp = pu0: s53;
+state = s53 & inp = pu1: s53;
+state = s53 & inp = pop: s35;
+state = s53 & inp = size: s53;
+state = s54 & inp = pu0: s54;
+state = s54 & inp = pu1: s54;
+state = s54 & inp = pop: s36;
+state = s54 & inp = size: s54;
+state = s55 & inp = pu0: s55;
+state = s55 & inp = pu1: s55;
+state = s55 & inp = pop: s36;
+state = s55 & inp = size: s55;
+state = s56 & inp = pu0: s56;
+state = s56 & inp = pu1: s56;
+state = s56 & inp = pop: s37;
+state = s56 & inp = size: s56;
+state = s57 & inp = pu0: s57;
+state = s57 & inp = pu1: s57;
+state = s57 & inp = pop: s38;
+state = s57 & inp = size: s57;
+state = s58 & inp = pu0: s58;
+state = s58 & inp = pu1: s58;
+state = s58 & inp = pop: s38;
+state = s58 & inp = size: s58;
+state = s59 & inp = pu0: s59;
+state = s59 & inp = pu1: s59;
+state = s59 & inp = pop: s39;
+state = s59 & inp = size: s59;
+state = s60 & inp = pu0: s60;
+state = s60 & inp = pu1: s60;
+state = s60 & inp = pop: s39;
+state = s60 & inp = size: s60;
+state = s61 & inp = pu0: s61;
+state = s61 & inp = pu1: s61;
+state = s61 & inp = pop: s40;
+state = s61 & inp = size: s61;
+state = s62 & inp = pu0: s62;
+state = s62 & inp = pu1: s62;
+state = s62 & inp = pop: s40;
+state = s62 & inp = size: s62;
+esac;
+out := case
+state = s0 & inp = pu0: 0;
+state = s0 & inp = pu1: 1;
+state = s0 & inp = pop: empty;
+state = s0 & inp = size: 0;
+state = s1 & inp = pu0: 0;
+state = s1 & inp = pu1: 1;
+state = s1 & inp = pop: 0;
+state = s1 & inp = size: 1;
+state = s2 & inp = pu0: 0;
+state = s2 & inp = pu1: 1;
+state = s2 & inp = pop: 1;
+state = s2 & inp = size: 1;
+state = s3 & inp = pu0: 0;
+state = s3 & inp = pu1: 1;
+state = s3 & inp = pop: 0;
+state = s3 & inp = size: 2;
+state = s4 & inp = pu0: 0;
+state = s4 & inp = pu1: 1;
+state = s4 & inp = pop: 1;
+state = s4 & inp = size: 2;
+state = s5 & inp = pu0: 0;
+state = s5 & inp = pu1: 1;
+state = s5 & inp = pop: 0;
+state = s5 & inp = size: 3;
+state = s6 & inp = pu0: 0;
+state = s6 & inp = pu1: 1;
+state = s6 & inp = pop: 1;
+state = s6 & inp = size: 3;
+state = s7 & inp = pu0: 0;
+state = s7 & inp = pu1: 1;
+state = s7 & inp = pop: 0;
+state = s7 & inp = size: 4;
+state = s8 & inp = pu0: 0;
+state = s8 & inp = pu1: 1;
+state = s8 & inp = pop: 1;
+state = s8 & inp = size: 4;
+state = s9 & inp = pu0: ful;
+state = s9 & inp = pu1: ful;
+state = s9 & inp = pop: 0;
+state = s9 & inp = size: 5;
+state = s10 & inp = pu0: ful;
+state = s10 & inp = pu1: ful;
+state = s10 & inp = pop: 1;
+state = s10 & inp = size: 5;
+state = s11 & inp = pu0: ful;
+state = s11 & inp = pu1: ful;
+state = s11 & inp = pop: 0;
+state = s11 & inp = size: 5;
+state = s12 & inp = pu0: 0;
+state = s12 & inp = pu1: 1;
+state = s12 & inp = pop: 0;
+state = s12 & inp = size: 2;
+state = s13 & inp = pu0: 0;
+state = s13 & inp = pu1: 1;
+state = s13 & inp = pop: 1;
+state = s13 & inp = size: 2;
+state = s14 & inp = pu0: 0;
+state = s14 & inp = pu1: 1;
+state = s14 & inp = pop: 0;
+state = s14 & inp = size: 3;
+state = s15 & inp = pu0: 0;
+state = s15 & inp = pu1: 1;
+state = s15 & inp = pop: 1;
+state = s15 & inp = size: 3;
+state = s16 & inp = pu0: 0;
+state = s16 & inp = pu1: 1;
+state = s16 & inp = pop: 0;
+state = s16 & inp = size: 4;
+state = s17 & inp = pu0: 0;
+state = s17 & inp = pu1: 1;
+state = s17 & inp = pop: 1;
+state = s17 & inp = size: 4;
+state = s18 & inp = pu0: ful;
+state = s18 & inp = pu1: ful;
+state = s18 & inp = pop: 1;
+state = s18 & inp = size: 5;
+state = s19 & inp = pu0: 0;
+state = s19 & inp = pu1: 1;
+state = s19 & inp = pop: 0;
+state = s19 & inp = size: 4;
+state = s20 & inp = pu0: 0;
+state = s20 & inp = pu1: 1;
+state = s20 & inp = pop: 0;
+state = s20 & inp = size: 3;
+state = s21 & inp = pu0: 0;
+state = s21 & inp = pu1: 1;
+state = s21 & inp = pop: 1;
+state = s21 & inp = size: 3;
+state = s22 & inp = pu0: 0;
+state = s22 & inp = pu1: 1;
+state = s22 & inp = pop: 0;
+state = s22 & inp = size: 3;
+state = s23 & inp = pu0: 0;
+state = s23 & inp = pu1: 1;
+state = s23 & inp = pop: 1;
+state = s23 & inp = size: 3;
+state = s24 & inp = pu0: 0;
+state = s24 & inp = pu1: 1;
+state = s24 & inp = pop: 1;
+state = s24 & inp = size: 4;
+state = s25 & inp = pu0: 0;
+state = s25 & inp = pu1: 1;
+state = s25 & inp = pop: 0;
+state = s25 & inp = size: 4;
+state = s26 & inp = pu0: 0;
+state = s26 & inp = pu1: 1;
+state = s26 & inp = pop: 1;
+state = s26 & inp = size: 4;
+state = s27 & inp = pu0: ful;
+state = s27 & inp = pu1: ful;
+state = s27 & inp = pop: 0;
+state = s27 & inp = size: 5;
+state = s28 & inp = pu0: ful;
+state = s28 & inp = pu1: ful;
+state = s28 & inp = pop: 1;
+state = s28 & inp = size: 5;
+state = s29 & inp = pu0: ful;
+state = s29 & inp = pu1: ful;
+state = s29 & inp = pop: 0;
+state = s29 & inp = size: 5;
+state = s30 & inp = pu0: ful;
+state = s30 & inp = pu1: ful;
+state = s30 & inp = pop: 1;
+state = s30 & inp = size: 5;
+state = s31 & inp = pu0: 0;
+state = s31 & inp = pu1: 1;
+state = s31 & inp = pop: 0;
+state = s31 & inp = size: 4;
+state = s32 & inp = pu0: ful;
+state = s32 & inp = pu1: ful;
+state = s32 & inp = pop: 0;
+state = s32 & inp = size: 5;
+state = s33 & inp = pu0: ful;
+state = s33 & inp = pu1: ful;
+state = s33 & inp = pop: 1;
+state = s33 & inp = size: 5;
+state = s34 & inp = pu0: 0;
+state = s34 & inp = pu1: 1;
+state = s34 & inp = pop: 0;
+state = s34 & inp = size: 4;
+state = s35 & inp = pu0: 0;
+state = s35 & inp = pu1: 1;
+state = s35 & inp = pop: 1;
+state = s35 & inp = size: 4;
+state = s36 & inp = pu0: 0;
+state = s36 & inp = pu1: 1;
+state = s36 & inp = pop: 1;
+state = s36 & inp = size: 4;
+state = s37 & inp = pu0: 0;
+state = s37 & inp = pu1: 1;
+state = s37 & inp = pop: 0;
+state = s37 & inp = size: 4;
+state = s38 & inp = pu0: 0;
+state = s38 & inp = pu1: 1;
+state = s38 & inp = pop: 1;
+state = s38 & inp = size: 4;
+state = s39 & inp = pu0: 0;
+state = s39 & inp = pu1: 1;
+state = s39 & inp = pop: 0;
+state = s39 & inp = size: 4;
+state = s40 & inp = pu0: 0;
+state = s40 & inp = pu1: 1;
+state = s40 & inp = pop: 1;
+state = s40 & inp = size: 4;
+state = s41 & inp = pu0: ful;
+state = s41 & inp = pu1: ful;
+state = s41 & inp = pop: 0;
+state = s41 & inp = size: 5;
+state = s42 & inp = pu0: ful;
+state = s42 & inp = pu1: ful;
+state = s42 & inp = pop: 1;
+state = s42 & inp = size: 5;
+state = s43 & inp = pu0: ful;
+state = s43 & inp = pu1: ful;
+state = s43 & inp = pop: 0;
+state = s43 & inp = size: 5;
+state = s44 & inp = pu0: ful;
+state = s44 & inp = pu1: ful;
+state = s44 & inp = pop: 1;
+state = s44 & inp = size: 5;
+state = s45 & inp = pu0: ful;
+state = s45 & inp = pu1: ful;
+state = s45 & inp = pop: 0;
+state = s45 & inp = size: 5;
+state = s46 & inp = pu0: ful;
+state = s46 & inp = pu1: ful;
+state = s46 & inp = pop: 1;
+state = s46 & inp = size: 5;
+state = s47 & inp = pu0: ful;
+state = s47 & inp = pu1: ful;
+state = s47 & inp = pop: 0;
+state = s47 & inp = size: 5;
+state = s48 & inp = pu0: ful;
+state = s48 & inp = pu1: ful;
+state = s48 & inp = pop: 0;
+state = s48 & inp = size: 5;
+state = s49 & inp = pu0: ful;
+state = s49 & inp = pu1: ful;
+state = s49 & inp = pop: 1;
+state = s49 & inp = size: 5;
+state = s50 & inp = pu0: ful;
+state = s50 & inp = pu1: ful;
+state = s50 & inp = pop: 0;
+state = s50 & inp = size: 5;
+state = s51 & inp = pu0: ful;
+state = s51 & inp = pu1: ful;
+state = s51 & inp = pop: 1;
+state = s51 & inp = size: 5;
+state = s52 & inp = pu0: ful;
+state = s52 & inp = pu1: ful;
+state = s52 & inp = pop: 0;
+state = s52 & inp = size: 5;
+state = s53 & inp = pu0: ful;
+state = s53 & inp = pu1: ful;
+state = s53 & inp = pop: 1;
+state = s53 & inp = size: 5;
+state = s54 & inp = pu0: ful;
+state = s54 & inp = pu1: ful;
+state = s54 & inp = pop: 0;
+state = s54 & inp = size: 5;
+state = s55 & inp = pu0: ful;
+state = s55 & inp = pu1: ful;
+state = s55 & inp = pop: 1;
+state = s55 & inp = size: 5;
+state = s56 & inp = pu0: ful;
+state = s56 & inp = pu1: ful;
+state = s56 & inp = pop: 1;
+state = s56 & inp = size: 5;
+state = s57 & inp = pu0: ful;
+state = s57 & inp = pu1: ful;
+state = s57 & inp = pop: 0;
+state = s57 & inp = size: 5;
+state = s58 & inp = pu0: ful;
+state = s58 & inp = pu1: ful;
+state = s58 & inp = pop: 1;
+state = s58 & inp = size: 5;
+state = s59 & inp = pu0: ful;
+state = s59 & inp = pu1: ful;
+state = s59 & inp = pop: 0;
+state = s59 & inp = size: 5;
+state = s60 & inp = pu0: ful;
+state = s60 & inp = pu1: ful;
+state = s60 & inp = pop: 1;
+state = s60 & inp = size: 5;
+state = s61 & inp = pu0: ful;
+state = s61 & inp = pu1: ful;
+state = s61 & inp = pop: 0;
+state = s61 & inp = size: 5;
+state = s62 & inp = pu0: ful;
+state = s62 & inp = pu1: ful;
+state = s62 & inp = pop: 1;
+state = s62 & inp = size: 5;
+esac;
+--LTLSPEC Properties
+
+DEFINE Stack-Fixed-Size:= 5;
+DEFINE EmptyStack:= (inp=size & out=0) | (inp=pop & out=empty) | state=s0 & inp=pu0 & out=0 | state=s0 & inp=pu1 & out=1; 
+DEFINE FullStack:= (inp=pu0 & out=ful) | (inp=pu1 & out=ful) | (inp=size & out=Stack-Fixed-Size);
+DEFINE Stack-Overflow:= Stack-Fixed-Size+1;
+DEFINE Stack-Underflow:= -1;
+
+
+--Liveness Properties.... "Something good will happen"  OR  "Some particular/or good situation eventually occur" Or "Desired behaviour is actually happening".
+	--Example-1: If "Input" then, eventually "Output".			G (Input -> F Output)
+	--Example-2: It "Started" hold then, eventually "Ready" also hold. 				G(Started -> F Ready)
+	--Example-3: If "write" is asserted forever and "read" is never asserted, then the FIFO eventually becomes Full. It think it is written as: G((write & ! read) -> F Full)
+	--Example-4: Every request will eventually lead to a response.  	G(request -> F response)	
+	--Example-5: If process-1 wants to enter its critical state, it eventually does".  	AG(process-1.state=entering  ->  AF process-1.state=critical)
+	--Example-6: For any state, if a "request" (of some source) occurs, then it will eventually be "acknowledged".   G(requested -> F acknowledged)
+	
+	--Example-7: F(x >5)    or   F (terminate)    or  F(rich)
+
+
+--inp : {pu0, pu1, pop, size};
+--out : {0, 1, empty, 2, ful, 3, Stack, Of, StackIsEmpty, StackIsFul};
+
+	
+
+--Property-1: If "Push" operation is done forever on a non-filled stack and "Pop" operation never done then the Stack eventually becomes "Full".
+		
+				--LTLSPEC NAME Liv_1_1 := G((!FullStack & ((inp=pu0|inp=pu1&inp!=pop) U FullStack)) -> X(inp=size -> out=3))									--True
+				LTLSPEC NAME Liv_1_2 := G((!FullStack & ((inp=pu0|inp=pu1) U FullStack)) -> X(inp=size -> out=Stack-Fixed-Size))												--True
+				LTLSPEC NAME Liv_1_3 := G((!FullStack & ((inp=pu0|inp=pu1) U FullStack)) -> F(inp=size -> out=Stack-Fixed-Size))												--True
+				LTLSPEC NAME Liv_1_4 := G((!FullStack & ((inp=pu0|inp=pu1) U FullStack)) -> X(inp=size -> out=Stack-Fixed-Size))								--True
+		
+				
+				CTLSPEC NAME Liv_1_5 := AG((!FullStack & (inp=pu0 | inp=pu1) & inp!=pop) -> AF (out=0 | out=1 | out=ful))										--True
+				CTLSPEC NAME Liv_1_6 := AG(((inp=pu0 | inp=pu1) & inp!=pop) -> AF (out=0 | out=1| out=ful))														--True
+			
+
+			
+				LTLSPEC NAME Liv_1_7 := G((!EmptyStack & (inp=pu0 | inp=pu1) U FullStack) -> X (inp=size -> out=Stack-Fixed-Size))												--True
+				LTLSPEC NAME Liv_1_8 := G((!EmptyStack & (inp=pu0 | inp=pu1) U FullStack & inp!=pop) -> X(inp=size -> out=Stack-Fixed-Size))									--True	
+				CTLSPEC NAME Liv_1_9 := AG((!EmptyStack & (inp=pu0 | inp=pu1) & inp!=pop) -> AF (out=0 | out=1 | out=ful))										--True		  
+		
+		
+	
+--Property-2: If "Pop" operation is done forever on non-empty stack and "Push" operation never done then the Stack eventually becomes "Empty".	
+
+				
+				--LTLSPEC NAME Liv_2_1 := G(!FullStack -> ((inp=pop U EmptyStack) ->X(inp=size -> out=0)))												--False	
+				
+				LTLSPEC NAME Liv_2_2 := G(!FullStack -> ((inp=pop U EmptyStack) ->(inp=size -> out=0)))													--True					
+				LTLSPEC NAME Liv_2_3 := G(!FullStack -> ((inp=pop U EmptyStack) ->F(inp=size -> out=0)))												--True	
+				
+				LTLSPEC NAME Liv_2_4 := G(!EmptyStack -> (inp=pop U EmptyStack) -> X(inp=size -> out=0))			   									--True
+				LTLSPEC NAME Liv_2_5 := G(!EmptyStack -> (inp=pop U EmptyStack) -> F(inp=size -> out=0))			   									--True
+				
+				LTLSPEC NAME Liv_2_6 := G(!EmptyStack -> ((inp!=pu0|inp!=pu1)&inp=pop U EmptyStack) -> X(inp=size -> out=0))			   				--True
+				
+						
+
+				
+				
+--Property-3(a): If "Push" operation wants to write on the Stack, then it eventually did this successfully without "Overflow".
+				
+				CTLSPEC NAME Liv_3_1 := AG((!FullStack & (inp=pu0 | inp=pu1)) -> AF (out!=Stack-Underflow | out!=Stack-Overflow))					--True				
+				CTLSPEC NAME Liv_3_2 := AG((inp=pu0 | inp=pu1) -> AF(out!=Stack-Overflow))															--True	
+				
+		
+
+--Property-3(b): If "Pop" operation wants to remove an element from the Stack, then it eventually did this successfully without "Underflow".
+
+				CTLSPEC NAME Liv_3_3 := AG(inp=pop -> AF(out!=Stack-Underflow))																	--True
+				CTLSPEC NAME Liv_3_4 := AG(!EmptyStack & inp=pop -> AF(out!=Stack-Underflow))													--True
+				
+				CTLSPEC NAME Liv_3_5 := AG((inp=pu0 | inp=pu1 | inp=pop) -> AF(out!=Stack-Overflow | out!=Stack-Underflow))						--True
+				
+				
+		
+		
